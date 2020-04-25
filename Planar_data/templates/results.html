@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+<p><a href="{{ url_for('index') }}"><button>Home</button></a></p>
+
+<h2>{{ the_title }}</h2>
+
+<p>You submitted the following data:</p>
+<table>
+<tr><td>Dataset:</td><td>{{ the_dataset }}</td></tr>
+<tr><td>Optimizer:</td><td>{{ the_optimizer }}</td></tr>
+</table>
+
+<p>When "{{the_dataset }}" is trained with "{{ the_optimizer }}", the following 
+results are returned:</p>
+<h3>{{ the_results }}</h3>
+
+{% endblock %}

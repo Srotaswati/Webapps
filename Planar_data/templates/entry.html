@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+      <h2 style = "text-align: center;">Planar Data Classification</h2>
+      
+      <form action = "http://localhost:5000/results" method = post>
+         <fieldset>
+            <legend>Enter Model Details</legend>
+            {{ form.hidden_tag() }}
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.dataset.label }}<br>{{ form.dataset }}<br>
+
+               {{ form.optimizer.label }}<br>{{ form.optimizer }}<br>
+	
+	       {{ form.regularization.label }} {{ form.regularization }}
+
+	       {{ form.reg_param.label }}:{{ form.reg_param(min=0, max=1) }}<br>
+               
+               {{ form.dropout.label }} {{ form.dropout }}
+		
+               {{ form.keep_prob.label }}:{{ form.keep_prob(min=0, max=1) }}<br>
+
+               {{ form.submit }}
+            </div>
+            
+         </fieldset>
+      </form>
+
+   {% endblock %}
